@@ -1,1 +1,131 @@
+< ！DOCTYPE html>
+< html lang="zh">
+< head>
+< meta charset="UTF-8">
+< title>AI UNIVERSE - LAUNCH</title>
+< meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+< style>
+身体{
+边缘:0;
+溢出:隐藏的;
+背景:黑色的;
+字体系列:Arial;
+颜色:白色的;
+}
+
+#BG{
+位置:绝对的;
+宽度:100%;
+高度:100%;
+背景:径向梯度(圆 在 中心，#12002b，#000);
+溢出:隐藏的;
+}
+
+.星{
+位置:绝对的;
+宽度:2PX;
+高度:2PX;
+背景:白色的;
+边界半径:50%;
+不透明度:0.6;
+}
+
+.中心{
+位置:绝对的;
+顶端:50%;
+左:50%;
+改变:翻译(-50%,-50%);
+text-align:中心;
+}
+
+.标题{
+字体大小:60PX;
+背景:线性梯度(90deg，#00f2ff，#ff00ff，#00ff88);
+-webkit-background-clip:文本;
+-webkit-text-fill-color:透明的;
+动画: 发出微弱的光 2s 无限的 交替;
+}
+
+@keyframes 发出微弱的光{
+从……起{过滤器:下影(0 0 10PX#00f2ff);}
+到{过滤器:下影(0 0 40PX#ff00ff);}
+}
+
+.副标题{
+不透明度:0.7;
+上边距:10PX;
+}
+
+按钮{
+上边距:30PX;
+padding:14PX 40PX;
+字体大小:18PX;
+边境:没有一个;
+边界半径:12PX;
+光标:指针;
+背景:线性梯度(90deg，#00f2ff，#ff00ff);
+颜色:白色的;
+箱形阴影:0 0 25PX RGBA(0,255,255,0.4);
+过渡:0.3s;
+}
+
+按钮:盘旋{
+改变:规模(1.1);
+}
+
+#装载{
+显示:没有一个;
+上边距:15PX;
+不透明度:0.8;
+}
+</style>
+</头>
+
+< body>
+
+< div id="bg"></div>
+
+< div class="center">
+    < div class="title">🌌   AI宇宙</div>
+    < div class="subtitle">终极发布版本 · Music × AI × Space Engine</div>
+
+    < button onclick="开始()">ENTER UNIVERSE</button>
+
+    < div id="loading">正在加载宇宙结构...</div>
+</div>
+
+< script>
+
+// 星空
+Const BG=文件.getElementById("bg");
+
+为(让 我=0;我< 250;我++){
+让 s=文件.createElement("div");
+s.className="星形";
+s.风格.左=数学.随机()*100+"%";
+s.风格.顶端=数学.随机()*100+"%";
+s.风格.不透明度=数学.随机();
+BG.appendChild(s);
+}
+
+// 进入游戏
+功能 开始(){
+文件.getElementById("正在加载").风格.显示="块";
+
+setTimeout(()=>{
+窗户.位置.href="game.html";
+},2000);
+}
+
+// 鼠标视差
+文件.addEventListener("鼠标移动",(e)=>{
+让 x=(e.ClientX/窗户.innerWidth-0.5)*20;
+让y=(e.客门/窗门.innerHeight-0.5)*20；
+BG.风格.改变='翻译(${x}PX，${y}PX)';
+});
+
+</script>
+
+</body>
+</html>
